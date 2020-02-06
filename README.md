@@ -11,7 +11,7 @@
 <p><a title="Télécharger le projet" href="https://s3-eu-west-1.amazonaws.com/static.oc-static.com/prod/courses/files/project-8-frontend/todo-list-project.zip">Télécharger le projet</a></p>
 <p>Regardez comment il est structuré et essayez de comprendre comment il fonctionne. Votre mission sera de <strong>corriger des bugs</strong>, <strong>ajouter des tests</strong>, et optimiser sa performance.</p>
 <figure><a href="https://user.oc-static.com/upload/2017/10/19/15083988221397_Screen%20Shot%202017-10-17%20at%2010.52.21%20AM.png" class="oc-imageLink"><img src="https://user.oc-static.com/upload/2017/10/19/15083988221397_Screen%20Shot%202017-10-17%20at%2010.52.21%20AM.png" alt="À vous de faire la meilleur application "></a>
-<figcaption>À vous de faire la meilleur application "to-do list" au monde !</figcaption>
+  </br><figcaption>À vous de faire la meilleur application "to-do list" au monde !</figcaption>
 </figure>
 <aside data-claire-semantic="information">
 <p>Il n'est pas nécessaire d'avoir votre code en ligne dans le cadre de ce projet. Cependant, si vous souhaitez construire votre portfolio professionnel et héberger le projet en ligne, notre partenaire 1&amp;1 IONOS offre 2 mois d'hébergement gratuits aux étudiants pour toute souscription à un pack d'hébergement <a href="https://www.ionos.fr/hebergement/hebergement-web?ac=OM.FR.FRo73K404518T7073a&amp;couponCode=AGNBMACB">(plus d'infos)</a>.</p>
