@@ -1,0 +1,211 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>JSDoc: template.js</title>
+
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="./build/entry.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href="https://fonts.googleapis.com/css?family=Muli:100,400,700|Oswald:300|Inconsolata,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+</head>
+
+<body>
+    <div id="stickyNavbarOverlay"></div>
+    <div class="top-navbar">
+        <div class="container">
+            <nav class="navbar" role="navigation" aria-label="main navigation">
+                <div class="navbar-brand">
+                    
+                    
+                        <h1 class="navbar-item">Documentation</h1>
+                    
+                    <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+                
+            </nav>
+        </div>
+    </div>
+    <div class="container">
+        <div class="columns">
+            <div class="column is-3" id="sidebarNav">
+                <div class="sidebar">
+                    <nav>
+                        <h2><a href="index.html">Home</a></h2><div class="category"><h3>Classes</h3><ul><li><a href="Controller.html">Controller</a></li><li><a href="Model.html">Model</a></li><li><a href="Store.html">Store</a></li><li><a href="Template.html">Template</a></li><li><a href="Todo.html">Todo</a></li><li><a href="View.html">View</a></li></ul><h3>Global</h3><ul><li><a href="global.html#setView">setView</a></li><li><a href="global.html#window.$delegateUtilis%25C3%25A9dans%257B@linkView%257D.">window.$delegate
+Utilisé dans {@link View}.</a></li><li><a href="global.html#window.$onUtilis%25C3%25A9dans%257B@linkView%257Det%257B@linkTodo%257D.">window.$on
+Utilisé dans {@link View} et {@link Todo}.</a></li><li><a href="global.html#window.qsUtilis%25C3%25A9dans%257B@linkView%257D.">window.qs
+Utilisé dans {@link View}.</a></li><li><a href="global.html#window.qsaUtilis%25C3%25A9dans%257B@linkView%257D.">window.qsa
+Utilisé dans {@link View}.</a></li></ul></div>
+                    </nav>
+                </div>
+            </div>
+            <div class="column is-9-desktop">
+                <div class="content" id="main-content-wrapper">
+                    <header class="page-title">
+                        <p>Source</p>
+                        <h1>template.js</h1>
+                    </header>
+                    
+                    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/*jshint laxbreak:true */
+(function (window) {
+	'use strict';
+
+	var htmlEscapes = {
+		'&amp;': '&amp;amp;',
+		'&lt;': '&amp;lt;',
+		'>': '&amp;gt;',
+		'"': '&amp;quot;',
+		'\'': '&amp;#x27;',
+		'`': '&amp;#x60;'
+	};
+
+	var escapeHtmlChar = function (chr) {
+		return htmlEscapes[chr];
+	};
+
+	var reUnescapedHtml = /[&amp;&lt;>"'`]/g;
+	var reHasUnescapedHtml = new RegExp(reUnescapedHtml.source);
+
+	var escape = function (string) {
+		return (string &amp;&amp; reHasUnescapedHtml.test(string))
+			? string.replace(reUnescapedHtml, escapeHtmlChar)
+			: string;
+	};
+
+	/**
+	 * Définit les valeurs par défaut du Template
+	 * @constructor Template
+	 * @name Template
+	 */
+	function Template() {
+		this.defaultTemplate
+		=	'&lt;li data-id="{{id}}" class="{{completed}}">'
+		+		'&lt;div class="view">'
+		+			'&lt;input class="toggle" type="checkbox" {{checked}}>'
+		+			'&lt;label>{{title}}&lt;/label>'
+		+			'&lt;button class="destroy">&lt;/button>'
+		+		'&lt;/div>'
+		+	'&lt;/li>';
+	}
+
+	/**
+	 * Créé une chaîne de caractère comprenant des éléments HTML &lt;li> et la retourne pour la placer dans l'application.
+	 * @method
+	 * @name Template.show
+	 * @param {object} data - L'objet contenant les clés que nous souhaitons trouver dans le template à remplacer.
+	 * @returns {string} Template HTML correspondant à l'élément &lt;li>
+	 *
+	 * @example
+	 * view.show({
+	 *	id: 1,
+	 *	title: "Hello World",
+	 *	completed: 0,
+	 * });
+	 */
+	Template.prototype.show = function (data) {
+		var i, l;
+		var view = '';
+
+		for (i = 0, l = data.length; i &lt; l; i++) {
+			var template = this.defaultTemplate;
+			var completed = '';
+			var checked = '';
+
+			if (data[i].completed) {
+				completed = 'completed';
+				checked = 'checked';
+			}
+
+			template = template.replace('{{id}}', data[i].id);
+			template = template.replace('{{title}}', escape(data[i].title));
+			template = template.replace('{{completed}}', completed);
+			template = template.replace('{{checked}}', checked);
+
+			view = view + template;
+		}
+
+		return view;
+	};
+
+	/**
+	 * Affiche un compteur du nombre de tâches à terminer.
+	 * @method
+	 * @name Template.itemCounter
+	 * @param {number} activeTodos - le nombre de Todos actives.
+	 * @returns {string} Chaîne contenant le nombre
+	 */
+	Template.prototype.itemCounter = function (activeTodos) {
+		var plural = activeTodos === 1 ? '' : 's';
+
+		return '&lt;strong>' + activeTodos + '&lt;/strong> item' + plural + ' left';
+	};
+
+	/**
+	 * Met à jour le texte dans le bouton "Clear completed" (s'affiche si nombre de Todos complètes > 0).
+	 * @method
+	 * @name Template.clearCompletedButton
+	 * @param  {number} completedTodos - Le nombre de Todos complètes.
+	 * @returns {string} Chaîne contenant le nombre
+	 */
+	Template.prototype.clearCompletedButton = function (completedTodos) {
+		if (completedTodos > 0) {
+			return 'Clear completed';
+		} else {
+			return '';
+		}
+	};
+
+	// Exporte vers window
+	window.app = window.app || {};
+	window.app.Template = Template;
+})(window);
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Wed Feb 05 2020 17:37:29 GMT+0100 (GMT+01:00)</p>
+        <p class="sidebar-created-by">
+            <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
+            <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
+        </p>
+    </div>
+</footer>
+
+
+<script src="scripts/app.min.js"></script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

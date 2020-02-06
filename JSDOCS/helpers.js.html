@@ -1,0 +1,196 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>JSDoc: helpers.js</title>
+
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="./build/entry.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href="https://fonts.googleapis.com/css?family=Muli:100,400,700|Oswald:300|Inconsolata,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+</head>
+
+<body>
+    <div id="stickyNavbarOverlay"></div>
+    <div class="top-navbar">
+        <div class="container">
+            <nav class="navbar" role="navigation" aria-label="main navigation">
+                <div class="navbar-brand">
+                    
+                    
+                        <h1 class="navbar-item">Documentation</h1>
+                    
+                    <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+                
+            </nav>
+        </div>
+    </div>
+    <div class="container">
+        <div class="columns">
+            <div class="column is-3" id="sidebarNav">
+                <div class="sidebar">
+                    <nav>
+                        <h2><a href="index.html">Home</a></h2><div class="category"><h3>Classes</h3><ul><li><a href="Controller.html">Controller</a></li><li><a href="Model.html">Model</a></li><li><a href="Store.html">Store</a></li><li><a href="Template.html">Template</a></li><li><a href="Todo.html">Todo</a></li><li><a href="View.html">View</a></li></ul><h3>Global</h3><ul><li><a href="global.html#setView">setView</a></li><li><a href="global.html#window.$delegateUtilis%25C3%25A9dans%257B@linkView%257D.">window.$delegate
+Utilisé dans {@link View}.</a></li><li><a href="global.html#window.$onUtilis%25C3%25A9dans%257B@linkView%257Det%257B@linkTodo%257D.">window.$on
+Utilisé dans {@link View} et {@link Todo}.</a></li><li><a href="global.html#window.qsUtilis%25C3%25A9dans%257B@linkView%257D.">window.qs
+Utilisé dans {@link View}.</a></li><li><a href="global.html#window.qsaUtilis%25C3%25A9dans%257B@linkView%257D.">window.qsa
+Utilisé dans {@link View}.</a></li></ul></div>
+                    </nav>
+                </div>
+            </div>
+            <div class="column is-9-desktop">
+                <div class="content" id="main-content-wrapper">
+                    <header class="page-title">
+                        <p>Source</p>
+                        <h1>helpers.js</h1>
+                    </header>
+                    
+                    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * global NodeList 
+ */
+(function (window) {
+	'use strict';
+	
+	/**
+	 * Récupère un élément par le sélecteur CSS, querySelector
+	 * @method
+	 * @name window.qs
+	 * Utilisé dans {@link View}.
+	 * @param {string} selector - élément CSS
+	 * @param {object} scope - l'objet dans lequel il peut y avoir l'élément
+	 */
+	window.qs = function (selector, scope) {
+		return (scope || document).querySelector(selector);
+	};
+
+	/**
+	 * Récupère tous les éléments par le sélecteur CSS, querySelectorAll
+	 * @method
+	 * @name window.qsa
+	 * Utilisé dans {@link View}.
+	 * @param {string} selector - élément CSS
+	 * @param {object} scope - l'objet dans lequel il peut y avoir les éléments
+	 */
+	window.qsa = function (selector, scope) {
+		return (scope || document).querySelectorAll(selector);
+	};
+
+	/**
+	 * Encapsule addEventListener.
+	 * @method
+	 * @name window.$on
+	 * Utilisé dans {@link View} et {@link Todo}.
+	 * @param {object} target - La cible de la fonction.
+	 * @param {boolean} type - Le type d'event : Focus ou Blur.
+  	 * @param {function} callback - La fonction de rappel.
+	 * @param {object} useCapture - L'élément capturé/utilisé.
+	 */	
+	window.$on = function (target, type, callback, useCapture) {
+		target.addEventListener(type, callback, !!useCapture);
+	};
+
+	/**
+	* Attache un gestionnaire à l’événement pour tous les éléments, existants ou qui seront créés, et qui correspondent au sélecteur, 
+	* (basé sur un élément racine).
+	* @method
+	* @name window.$delegate
+	* Utilisé dans {@link View}.
+	* @param {object} target  - La cible.
+	* @param {string} selector - un élément HTML.
+	* @param {string} type - Le type d'event.
+	* @param {function} handler -  Un callback a exécuter sous condition.
+	*/
+	window.$delegate = function (target, selector, type, handler) {
+		function dispatchEvent(event) {
+			var targetElement = event.target;
+			var potentialElements = window.qsa(selector, target);
+			var hasMatch = Array.prototype.indexOf.call(potentialElements, targetElement) >= 0;
+
+			if (hasMatch) {
+				handler.call(targetElement, event);
+			}
+		}
+		/**
+		* useCapture peut être de type blur ou focus.
+		* https://developer.mozilla.org/en-US/docs/Web/Events/blur
+		* @type {boolean}
+		*/
+		var useCapture = type === 'blur' || type === 'focus';
+		/**
+		 * $on ajoute un eventListener
+		 */
+		window.$on(target, type, dispatchEvent, useCapture);
+	};
+
+	/**
+	 * Trouve l'élément parent avec le tagName désigné : $parent(qs('a'), 'div');
+	 * @method
+	 * @name window.$parent
+	 * @param {object} element - L'élément actif.
+	 * @param {string} tagName - Le tagName de l'élément.
+	 */
+	window.$parent = function (element, tagName) {
+		if (!element.parentNode) {
+			return;
+		}
+		if (element.parentNode.tagName.toLowerCase() === tagName.toLowerCase()) {
+			return element.parentNode;
+		}
+		return window.$parent(element.parentNode, tagName);
+	};
+	/**
+	 * Autorise les boucles sur les nœuds : qsa('.foo').forEach(function () {})
+	 */
+	NodeList.prototype.forEach = Array.prototype.forEach;
+})(window);
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Wed Feb 05 2020 17:37:29 GMT+0100 (GMT+01:00)</p>
+        <p class="sidebar-created-by">
+            <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
+            <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
+        </p>
+    </div>
+</footer>
+
+
+<script src="scripts/app.min.js"></script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
