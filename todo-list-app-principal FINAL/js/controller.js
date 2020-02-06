@@ -2,11 +2,12 @@
 	'use strict';
 
 	/**
-	 * Takes a model and view and acts as the controller between them
+	 * Le controller permet de faire l'interaction entre le {@link Model} et la {@Link View}.
 	 *
-	 * @constructor
-	 * @param {object} model The model instance
-	 * @param {object} view The view instance
+	 * @constructor Controller
+	 * @name Controller
+	 * @param {object} model - L'instance {@link Model}.
+	 * @param {object} view - L'instance {@link View}.
 	 */
 	function Controller(model, view) {
 		var self = this;
@@ -47,9 +48,11 @@
 	}
 
 	/**
-	 * Loads and initialises the view
-	 *
-	 * @param {string} '' | 'active' | 'completed'
+	 * Charge et initialise {@link View}.
+	 * @method
+	 * @name Controller.setView
+	 * @param {string} locationHash - Le hash de la page en cours, peut prendre les valeurs suivantes :
+	 *                                 '' | 'active' | 'completed'.
 	 */
 	Controller.prototype.setView = function (locationHash) {
 		var route = locationHash.split('/')[1];
@@ -58,8 +61,9 @@
 	};
 
 	/**
-	 * An event to fire on load. Will get all items and display them in the
-	 * todo-list
+	 * Récupère toutes les Todos via le Model et les affiche dans la Todo List grâce à la View.
+	 * @method
+	 * @name Controller.showAll
 	 */
 	Controller.prototype.showAll = function () {
 		var self = this;
@@ -69,7 +73,9 @@
 	};
 
 	/**
-	 * Renders all active tasks
+	 * Récupère toutes les Todos actives via le Model et les affiche dans la Todo List grâce à la View.
+	 * @method
+	 * @name Controller.showActive
 	 */
 	Controller.prototype.showActive = function () {
 		var self = this;
@@ -79,7 +85,9 @@
 	};
 
 	/**
-	 * Renders all completed tasks
+	 * Récupère toutes les Todos complètes via le Model et les affiche dans la Todo List grâce à la View.
+	 * @method
+	 * @name Controller.showCompleted
 	 */
 	Controller.prototype.showCompleted = function () {
 		var self = this;
@@ -90,8 +98,11 @@
 
 
 	/**
-	 * An event to fire whenever you want to add an item. Simply pass in the event
-	 * object and it'll handle the DOM insertion and saving of the new item.
+	 * Evénement à déclencher afin de pouvoir ajouter un élément. Il suffit de passer
+	 * dans l'objet event et il va gérer l'insertion DOM et la sauvegarde du nouvel élément.
+	 * @method
+	 * @name Controller.addItem
+	 * @param {string} title - Le contenu du todo.
 	 */
 	Controller.prototype.addItem = function (title) {
 		var self = this;
@@ -106,8 +117,11 @@
 		});
 	};
 
-	/*
-	 * Triggers the item editing mode.
+	/**
+	 * Active l'édition d'un item.
+	 * @method
+	 * @name Controller.editItem
+	 * @param {number} id - L'ID de la Todo à éditer.
 	 */
 	Controller.prototype.editItem = function (id) {
 		var self = this;
@@ -116,8 +130,12 @@
 		});
 	};
 
-	/*
-	 * Finishes the item editing mode successfully.
+	/**
+	 * Termine le mode d'édition d'un élément avec modification réussie et sauvegardée.
+	 * @method
+	 * @name Controller.editItemSave
+	 * @param {number} id - L'ID du Todo édité à sauvegarder.
+	 * @param {string} title - Le contenu du todo modifié.
 	 */
 	Controller.prototype.editItemSave = function (id, title) {
 		var self = this;
@@ -133,8 +151,11 @@
 		}
 	};
 
-	/*
-	 * Cancels the item editing mode.
+	/**
+	 * Annule le mode édition de l'élément.
+	 * @method
+	 * @name Controller.editItemCancel
+	 * @param {number} id - ID de l'item dont la modification est annulée.
 	 */
 	Controller.prototype.editItemCancel = function (id) {
 		var self = this;
@@ -144,11 +165,10 @@
 	};
 
 	/**
-	 * By giving it an ID it'll find the DOM element matching that ID,
-	 * remove it from the DOM and also remove it from storage.
-	 *
-	 * @param {number} id The ID of the item to remove from the DOM and
-	 * storage
+	 * L'ID va permettre de retrouver l'élément du DOM correspondant à celui-ci, et de le supprimer du DOM et du storage.
+	 * @method
+	 * @name Controller.removeItem
+	 * @param {number} id - ID de l'item à supprimer du DOM et du storage
 	 */
 	Controller.prototype.removeItem = function (id) {
 		var self = this;
@@ -165,7 +185,9 @@
 	};
 
 	/**
-	 * Will remove all completed items from the DOM and storage.
+	 * Supprime tous les items déclarés complets du DOM et du storage.
+	 * @method
+	 * @name Controller.removeCompletedItems
 	 */
 	Controller.prototype.removeCompletedItems = function () {
 		var self = this;
@@ -179,13 +201,12 @@
 	};
 
 	/**
-	 * Give it an ID of a model and a checkbox and it will update the item
-	 * in storage based on the checkbox's state.
-	 *
-	 * @param {number} id The ID of the element to complete or uncomplete
-	 * @param {object} checkbox The checkbox to check the state of complete
-	 *                          or not
-	 * @param {boolean|undefined} silent Prevent re-filtering the todo items
+	 * Utilise l'id et la checkbox et va mettre à jour l'item dans le storage en fonction du statut de la checkbox.
+	 * @method
+	 * @name Controller.toggleComplete
+	 * @param {number} id - ID de l'item marqué comme complété ou non
+	 * @param {object} checkbox - La checkbox sur laquelle vérifier si l'item est complété ou non
+	 * @param {boolean|undefined} silent - Evite de filter à nouveau les items
 	 */
 	Controller.prototype.toggleComplete = function (id, completed, silent) {
 		var self = this;
@@ -202,8 +223,10 @@
 	};
 
 	/**
-	 * Will toggle ALL checkboxes' on/off state and completeness of models.
-	 * Just pass in the event object.
+	 * Permet de basculer l'activation / désactivation des cases à cocher en demandant au Model le statut préalable des Todos.
+	 * @method
+	 * @name Controller.toggleAll
+	 * @param {object} completed - Statut de la Checkbox.
 	 */
 	Controller.prototype.toggleAll = function (completed) {
 		var self = this;
@@ -217,8 +240,9 @@
 	};
 
 	/**
-	 * Updates the pieces of the page which change depending on the remaining
-	 * number of todos.
+	 * Met à jour les parties de la page qui changent en fonction du nombre restant de todos.
+	 * @method
+	 * @name Controller._updateCount
 	 */
 	Controller.prototype._updateCount = function () {
 		var self = this;
@@ -235,18 +259,25 @@
 	};
 
 	/**
-	 * Re-filters the todo items, based on the active route.
-	 * @param {boolean|undefined} force  forces a re-painting of todo items.
+	 * Filtre à nouveau les items en fonction de la route active. 
+	 * Appelée après l'ajout ou la suppression pour régénérer l'affichage.
+	 * @method
+	 * @name Controller._filter
+	 * @param {boolean|undefined} force - Force le ré-affichage des items.
 	 */
 	Controller.prototype._filter = function (force) {
 		var activeRoute = this._activeRoute.charAt(0).toUpperCase() + this._activeRoute.substr(1);
 
-		// Update the elements on the page, which change with each completed todo
+		/**
+		 * Met à jour les éléments de la page qui changent à chaque todo complétée
+		*/
 		this._updateCount();
 
-		// If the last active route isn't "All", or we're switching routes, we
-		// re-create the todo item elements, calling:
-		//   this.show[All|Active|Completed]();
+		/** 
+		 * Si la dernière route active n’est pas "All", ou si nous changeons de route, nous
+		 * recréons les éléments todo, en appelant :
+		 * this.show[All|Active|Completed]();
+		*/
 		if (force || this._lastActiveRoute !== 'All' || this._lastActiveRoute !== activeRoute) {
 			this['show' + activeRoute]();
 		}
@@ -255,11 +286,16 @@
 	};
 
 	/**
-	 * Simply updates the filter nav's selected states
+	 * Met simplement à jour les routes dans url / filtre.
+	 * @method
+	 * @name Controller._updateFilterState
+	 * @param {string} currentPage - Route de la page actuelle
 	 */
 	Controller.prototype._updateFilterState = function (currentPage) {
-		// Store a reference to the active route, allowing us to re-filter todo
-		// items as they are marked complete or incomplete.
+		/** 
+		 * Stocker une référence à la route active, nous permettant de re-filtrer todo
+ 		 * éléments marqués comme complets ou incomplets
+ 		*/
 		this._activeRoute = currentPage;
 
 		if (currentPage === '') {
@@ -271,7 +307,7 @@
 		this.view.render('setFilter', currentPage);
 	};
 
-	// Export to window
+	// Exporte vers window
 	window.app = window.app || {};
 	window.app.Controller = Controller;
 })(window);

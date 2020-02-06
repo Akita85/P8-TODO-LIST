@@ -25,9 +25,9 @@
 	};
 
 	/**
-	 * Sets up defaults for all the Template methods such as a default template
-	 *
-	 * @constructor
+	 * Définit les valeurs par défaut du Template
+	 * @constructor Template
+	 * @name Template
 	 */
 	function Template() {
 		this.defaultTemplate
@@ -41,14 +41,11 @@
 	}
 
 	/**
-	 * Creates an <li> HTML string and returns it for placement in your app.
-	 *
-	 * NOTE: In real life you should be using a templating engine such as Mustache
-	 * or Handlebars, however, this is a vanilla JS example.
-	 *
-	 * @param {object} data The object containing keys you want to find in the
-	 *                      template to replace.
-	 * @returns {string} HTML String of an <li> element
+	 * Créé une chaîne de caractère comprenant des éléments HTML <li> et la retourne pour la placer dans l'application.
+	 * @method
+	 * @name Template.show
+	 * @param {object} data - L'objet contenant les clés que nous souhaitons trouver dans le template à remplacer.
+	 * @returns {string} Template HTML correspondant à l'élément <li>
 	 *
 	 * @example
 	 * view.show({
@@ -83,10 +80,11 @@
 	};
 
 	/**
-	 * Displays a counter of how many to dos are left to complete
-	 *
-	 * @param {number} activeTodos The number of active todos.
-	 * @returns {string} String containing the count
+	 * Affiche un compteur du nombre de tâches à terminer.
+	 * @method
+	 * @name Template.itemCounter
+	 * @param {number} activeTodos - le nombre de Todos actives.
+	 * @returns {string} Chaîne contenant le nombre
 	 */
 	Template.prototype.itemCounter = function (activeTodos) {
 		var plural = activeTodos === 1 ? '' : 's';
@@ -95,10 +93,11 @@
 	};
 
 	/**
-	 * Updates the text within the "Clear completed" button
-	 *
-	 * @param  {[type]} completedTodos The number of completed todos.
-	 * @returns {string} String containing the count
+	 * Met à jour le texte dans le bouton "Clear completed" (s'affiche si nombre de Todos complètes > 0).
+	 * @method
+	 * @name Template.clearCompletedButton
+	 * @param  {number} completedTodos - Le nombre de Todos complètes.
+	 * @returns {string} Chaîne contenant le nombre
 	 */
 	Template.prototype.clearCompletedButton = function (completedTodos) {
 		if (completedTodos > 0) {
@@ -108,7 +107,7 @@
 		}
 	};
 
-	// Export to window
+	// Exporte vers window
 	window.app = window.app || {};
 	window.app.Template = Template;
 })(window);

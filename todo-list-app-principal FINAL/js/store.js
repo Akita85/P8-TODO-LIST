@@ -3,12 +3,12 @@
 	'use strict';
 
 	/**
-	 * Creates a new client side storage object and will create an empty
-	 * collection if no collection already exists.
-	 *
-	 * @param {string} name The name of our DB we want to use
-	 * @param {function} callback Our fake DB uses callbacks because in
-	 * real life you probably would be making AJAX calls
+	 * Crée un nouvel objet de stockage côté client et crée un jeu de données vide si aucun n'existe.
+	 * @constructor Store
+	 * @name Store
+	 * @param {string} name - le nom de la Base de Données que nous souhaitons utiliser
+	 * @param {function} callback - Notre BD utilise les callbacks 
+	 * mais en condition réelle nous ferions probablement des appels AJAX 
 	 */
 	function Store(name, callback) {
 		callback = callback || function () {};
@@ -27,16 +27,15 @@
 	}
 
 	/**
-	 * Finds items based on a query given as a JS object
-	 *
-	 * @param {object} query The query to match against (i.e. {foo: 'bar'})
-	 * @param {function} callback	 The callback to fire when the query has
-	 * completed running
-	 *
+	 * Trouve les items en fonction d'une requête faite sous la forme d'un objet JS.
+	 * @method
+	 * @name Store.find
+	 * @param {object} query - La requête à comparer ({foo: 'bar'})
+	 * @param {function} callback -	callback appelée quand la requête est terminée
 	 * @example
 	 * db.find({foo: 'bar', hello: 'world'}, function (data) {
-	 *	 // data will return any items that have foo: bar and
-	 *	 // hello: world in their properties
+	 *	 // data retournera tous les éléments qui ont foo: bar et
+	 *	 hello: world dans leurs propriétés
 	 * });
 	 */
 	Store.prototype.find = function (query, callback) {
@@ -57,9 +56,10 @@
 	};
 
 	/**
-	 * Will retrieve all data from the collection
-	 *
-	 * @param {function} callback The callback to fire upon retrieving data
+	 * Retrouve toutes les données de la collection
+	 * @method
+	 * @name Store.findAll
+	 * @param {function} callback - Appelée lors de la récupération des données
 	 */
 	Store.prototype.findAll = function (callback) {
 		callback = callback || function () {};
@@ -67,12 +67,13 @@
 	};
 
 	/**
-	 * Will save the given data to the DB. If no item exists it will create a new
-	 * item, otherwise it'll simply update an existing item's properties
-	 *
-	 * @param {object} updateData The data to save back into the DB
-	 * @param {function} callback The callback to fire after saving
-	 * @param {number} id An optional param to enter an ID of an item to update
+	 * Sauvegarde les données dans la BD. Crée un nouvel item si aucun n'existe, 
+	 * sinon met à jour les propriétés d'un item existant.
+	 * @method
+	 * @name Store.save
+	 * @param {object} updateData - La donnée à enregistrer dans la BD
+	 * @param {function} callback - La fonction de rappel après l'enregistrement
+	 * @param {number} id - Un paramètre optionnel correspondant à l'ID d’un item à mettre à jour
 	 */
 	Store.prototype.save = function (updateData, callback, id) {
 		var data = JSON.parse(localStorage[this._dbName]);
@@ -80,7 +81,9 @@
 
 		callback = callback || function () {};
 
-		// If an ID was actually given, find the item and update each property
+		/** 
+		 * Si un ID a été donné, trouve l’élément et met à jour chaque propriété
+		 */
 		if (id) {
 			for (var i = 0; i < todos.length; i++) {
 				if (todos[i].id === id) {
@@ -94,7 +97,10 @@
 			callback.call(this, todos);
 		} else {
 			
-			// Assign an ID
+			/** 
+			 * Génère et assigne un ID unique
+			 * @see https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Date/now 
+		 	*/
 			updateData.id = Date.now();
 			todos.push(updateData);
 			localStorage[this._dbName] = JSON.stringify(data);
@@ -103,10 +109,11 @@
 	};
 
 	/**
-	 * Will remove an item from the Store based on its ID
-	 *
-	 * @param {number} id The ID of the item you want to remove
-	 * @param {function} callback The callback to fire after saving
+	 * Supprime un item de la BD en fonction de son id.
+	 * @method
+	 * @name Store.remove
+	 * @param {number} id - l'ID de l'item que nous voulons supprimer
+	 * @param {function} callback - Fonction à appeler après la sauvegarde
 	 */
 	Store.prototype.remove = function (id, callback) {
 		var data = JSON.parse(localStorage[this._dbName]);
@@ -130,9 +137,10 @@
 	};
 
 	/**
-	 * Will drop all storage and start fresh
-	 *
-	 * @param {function} callback The callback to fire after dropping the data
+	 * Supprime toutes les données de la BD et réinitialise un tableau vide
+	 * @method
+	 * @name Store.drop
+	 * @param {function} callback - appelée après avoir supprimé toutes les données. 
 	 */
 	Store.prototype.drop = function (callback) {
 		var data = {todos: []};
@@ -140,7 +148,7 @@
 		callback.call(this, data.todos);
 	};
 
-	// Export to window
+	// Exporte vers window
 	window.app = window.app || {};
 	window.app.Store = Store;
 })(window);
