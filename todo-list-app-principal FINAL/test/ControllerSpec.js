@@ -62,6 +62,7 @@ describe('controller', function () {
 		let todo = [];
 		setUpModel(todo);
 		subject.setView('');
+		// Vérifie que la todo est appelée
 		expect(view.render).toHaveBeenCalledWith('showEntries', todo);
 	});
 
@@ -91,8 +92,18 @@ describe('controller', function () {
 			setUpModel([todo]);
 			
 			subject.setView('#/active');
-
+			// Vérifie que la Todo active s'affiche bien dans la View.
 			expect(view.render).toHaveBeenCalledWith('showEntries', [todo]);
+		});
+		
+		it('should show active entries to the model', function () {
+			// ADD TEST : MODEL
+			var todo = {title: 'my todo', completed: false};
+			setUpModel([todo]);
+		
+			subject.setView('#/active');
+			// Vérifie que le Model renvoie bien une Todo ayant un filtre completed : False. Donc une Todo toujours active.
+			expect(model.read).toHaveBeenCalledWith({completed: false}, jasmine.any(Function));
 		});
 
 		it('should show completed entries', function () {
@@ -101,8 +112,18 @@ describe('controller', function () {
 			setUpModel([todo]);
 
 			subject.setView('#/completed');
-
+			// Vérifie que la Todo complète s'affiche bien dans la View.
 			expect(view.render).toHaveBeenCalledWith('showEntries', [todo]);
+		});
+
+		it('should show completed entries to the model', function () {
+			// ADD TEST : MODEL
+			var todo = {title: 'my todo', completed: true};
+			setUpModel([todo]);
+		
+			subject.setView('#/completed');
+			// Vérifie que le Model renvoie bien une Todo ayant un filtre completed : True. Donc une Todo déclarée complète.
+			expect(model.read).toHaveBeenCalledWith({completed: true}, jasmine.any(Function));
 		});
 	});
 
@@ -153,9 +174,8 @@ describe('controller', function () {
 		setUpModel([]);
 
 		subject.setView('');
-
+		// Vérifie que le filtre All est surligné quand l'utilisateur est sur la View par défaut.
 		expect(view.render).toHaveBeenCalledWith('setFilter', '');
-
 	});
 
 	it('should highlight "Active" filter when switching to active view', function () {
@@ -163,8 +183,17 @@ describe('controller', function () {
 		setUpModel([]);
 
 		subject.setView('#/active');
-
+		// Vérifie que le filtre Active est surligné quand l'utilisateur est sur la View - page Active.
 		expect(view.render).toHaveBeenCalledWith('setFilter', 'active');
+	});
+
+	it('should highlight "Completed" filter when switching to active view', function () {
+		// ADD TEST
+		setUpModel([]);
+
+		subject.setView('#/completed');
+		// Vérifie que le filtre Completed est surligné quand l'utilisateur est sur la View - page Completed.
+		expect(view.render).toHaveBeenCalledWith('setFilter', 'completed');
 	});
 
 	describe('toggle all', function () {
@@ -174,10 +203,27 @@ describe('controller', function () {
 			setUpModel(todos);
 			subject.setView('');
 
+			 // Vérifie que l'utilisateur passe les deux todos en statut completed
 			view.trigger('toggleAll', {completed: true});
-		
+			
+			// Vérifie que le model met à jour la todo 21 puis le 42 en completed: true suite à l'action de l'utilisateur
 			expect(model.update).toHaveBeenCalledWith(21, {completed: true}, jasmine.any(Function));
 			expect(model.update).toHaveBeenCalledWith(42, {completed: true}, jasmine.any(Function));
+			
+		});
+
+		it('should toggle all todos to active', function () {
+			// ADD TEST
+			var todos = [{id: 21, title: 'my todo', completed: true}, {id: 42, title: 'my todo 2', completed: true}] ;
+			setUpModel(todos);
+			subject.setView('');
+			
+			 // Vérifie que l'utilisateur passe les deux todos en statut active
+			view.trigger('toggleAll', {completed: false});
+			
+			// Vérifie que le model met à jour la todo 21 puis le 42 en completed: false suite à l'action de l'utilisateur
+			expect(model.update).toHaveBeenCalledWith(21, {completed: false}, jasmine.any(Function));
+			expect(model.update).toHaveBeenCalledWith(42, {completed: false}, jasmine.any(Function));
 			
 		});
 
@@ -188,8 +234,10 @@ describe('controller', function () {
 			setUpModel(todos);
 			subject.setView('');
 
+			// Passe les 2 todos en True : actives
 			view.trigger('toggleAll', {completed: true});
 
+			// Vérifie que la View renvoie une mise à jour du décompte d'items actifs ici égal à 2
 			expect(view.render).toHaveBeenCalledWith('updateElementCount', 2);
 		});
 	});
@@ -200,8 +248,9 @@ describe('controller', function () {
 			setUpModel([]);
 			subject.setView('');
 
+			// Crée une nouvelle Todo avec pour titre 'a new todo'
 			view.trigger('newTodo', 'a new todo');
-		
+			// Vérifie que le model prend bien en compte cette nouvelle création.
 			expect(model.create).toHaveBeenCalledWith('a new todo', jasmine.any(Function));
 		});
 
@@ -247,8 +296,9 @@ describe('controller', function () {
 			setUpModel([todo]);
 
 			subject.setView('');
+			// Demande de suppression passée via la View sur la todo.
 			view.trigger('itemRemove', {id: 42});
-
+			// Vérifie que le model supprime bien la todo en question.
 			expect(model.remove).toHaveBeenCalledWith(42, jasmine.any(Function));
 		});
 

@@ -244,13 +244,14 @@
 	 * @method
 	 * @name Controller._updateCount
 	 */
-	Controller.prototype._updateCount = function () {
+	Controller.prototype._updateCount = function (activeRoute) {
 		var self = this;
 		self.model.getCount(function (todos) {
 			self.view.render('updateElementCount', todos.active);
 			self.view.render('clearCompletedButton', {
 				completed: todos.completed,
-				visible: todos.completed > 0
+				visible: todos.completed > 0 &&
+				activeRoute != "Active"
 			});
 
 			self.view.render('toggleAll', {checked: todos.completed === todos.total});
@@ -271,7 +272,7 @@
 		/**
 		 * Met à jour les éléments de la page qui changent à chaque todo complétée
 		*/
-		this._updateCount();
+		this._updateCount(activeRoute);
 
 		/** 
 		 * Si la dernière route active n’est pas "All", ou si nous changeons de route, nous
