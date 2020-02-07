@@ -3,63 +3,43 @@
 <head>
     
     <meta charset="utf-8">
-    <title>JSDoc: View</title>
-
-    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script src="./build/entry.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>View - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <link href="https://fonts.googleapis.com/css?family=Muli:100,400,700|Oswald:300|Inconsolata,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
-    <link type="text/css" rel="stylesheet" href="styles/app.min.css">
-    <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-
 <body>
-    <div id="stickyNavbarOverlay"></div>
-    <div class="top-navbar">
-        <div class="container">
-            <nav class="navbar" role="navigation" aria-label="main navigation">
-                <div class="navbar-brand">
-                    
-                    
-                        <h1 class="navbar-item">Documentation</h1>
-                    
-                    <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                    </a>
-                </div>
-                
-            </nav>
-        </div>
-    </div>
-    <div class="container">
-        <div class="columns">
-            <div class="column is-3" id="sidebarNav">
-                <div class="sidebar">
-                    <nav>
-                        <h2><a href="index.html">Home</a></h2><div class="category"><h3>Classes</h3><ul><li><a href="Controller.html">Controller</a></li><li><a href="Model.html">Model</a></li><li><a href="Store.html">Store</a></li><li><a href="Template.html">Template</a></li><li><a href="Todo.html">Todo</a></li><li><a href="View.html">View</a></li></ul><h3>Global</h3><ul><li><a href="global.html#setView">setView</a></li><li><a href="global.html#window.$delegateUtilis%25C3%25A9dans%257B@linkView%257D.">window.$delegate
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Controller.html">Controller</a><ul class='methods'><li data-type='method'><a href="Controller.html#._filter">_filter</a></li><li data-type='method'><a href="Controller.html#._updateCount">_updateCount</a></li><li data-type='method'><a href="Controller.html#._updateFilterState">_updateFilterState</a></li><li data-type='method'><a href="Controller.html#.addItem">addItem</a></li><li data-type='method'><a href="Controller.html#.editItem">editItem</a></li><li data-type='method'><a href="Controller.html#.editItemCancel">editItemCancel</a></li><li data-type='method'><a href="Controller.html#.editItemSave">editItemSave</a></li><li data-type='method'><a href="Controller.html#.removeCompletedItems">removeCompletedItems</a></li><li data-type='method'><a href="Controller.html#.removeItem">removeItem</a></li><li data-type='method'><a href="Controller.html#.setView">setView</a></li><li data-type='method'><a href="Controller.html#.showActive">showActive</a></li><li data-type='method'><a href="Controller.html#.showAll">showAll</a></li><li data-type='method'><a href="Controller.html#.showCompleted">showCompleted</a></li><li data-type='method'><a href="Controller.html#.toggleAll">toggleAll</a></li><li data-type='method'><a href="Controller.html#.toggleComplete">toggleComplete</a></li></ul></li><li><a href="Model.html">Model</a><ul class='methods'><li data-type='method'><a href="Model.html#.create">create</a></li><li data-type='method'><a href="Model.html#.getCount">getCount</a></li><li data-type='method'><a href="Model.html#.read">read</a></li><li data-type='method'><a href="Model.html#.remove">remove</a></li><li data-type='method'><a href="Model.html#.removeAll">removeAll</a></li><li data-type='method'><a href="Model.html#.update">update</a></li></ul></li><li><a href="Store.html">Store</a><ul class='methods'><li data-type='method'><a href="Store.html#.drop">drop</a></li><li data-type='method'><a href="Store.html#.find">find</a></li><li data-type='method'><a href="Store.html#.findAll">findAll</a></li><li data-type='method'><a href="Store.html#.remove">remove</a></li><li data-type='method'><a href="Store.html#.save">save</a></li></ul></li><li><a href="Template.html">Template</a><ul class='methods'><li data-type='method'><a href="Template.html#.clearCompletedButton">clearCompletedButton</a></li><li data-type='method'><a href="Template.html#.itemCounter">itemCounter</a></li><li data-type='method'><a href="Template.html#.show">show</a></li></ul></li><li><a href="Todo.html">Todo</a></li><li><a href="View.html">View</a><ul class='methods'><li data-type='method'><a href="View.html#._bindItemEditCancel">_bindItemEditCancel</a></li><li data-type='method'><a href="View.html#._bindItemEditDone">_bindItemEditDone</a></li><li data-type='method'><a href="View.html#._clearCompletedButton">_clearCompletedButton</a></li><li data-type='method'><a href="View.html#._editItem">_editItem</a></li><li data-type='method'><a href="View.html#._editItemDone">_editItemDone</a></li><li data-type='method'><a href="View.html#._elementComplete">_elementComplete</a></li><li data-type='method'><a href="View.html#._itemId">_itemId</a></li><li data-type='method'><a href="View.html#._removeItem">_removeItem</a></li><li data-type='method'><a href="View.html#._setFilter">_setFilter</a></li><li data-type='method'><a href="View.html#.bind">bind</a></li><li data-type='method'><a href="View.html#.render">render</a></li></ul></li></ul><h3>Global</h3><ul><li><a href="global.html#setView">setView</a></li><li><a href="global.html#window.$delegateUtilis%25C3%25A9dans%257B@linkView%257D.">window.$delegate
 Utilisé dans <a href="View.html">View</a>.</a></li><li><a href="global.html#window.$onUtilis%25C3%25A9dans%257B@linkView%257Det%257B@linkTodo%257D.">window.$on
 Utilisé dans <a href="View.html">View</a> et <a href="Todo.html">Todo</a>.</a></li><li><a href="global.html#window.qsUtilis%25C3%25A9dans%257B@linkView%257D.">window.qs
 Utilisé dans <a href="View.html">View</a>.</a></li><li><a href="global.html#window.qsaUtilis%25C3%25A9dans%257B@linkView%257D.">window.qsa
-Utilisé dans <a href="View.html">View</a>.</a></li></ul></div>
-                    </nav>
-                </div>
-            </div>
-            <div class="column is-9-desktop">
-                <div class="content" id="main-content-wrapper">
-                    <header class="page-title">
-                        <p>Class</p>
-                        <h1>View</h1>
-                    </header>
-                    
-                    
+Utilisé dans <a href="View.html">View</a>.</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">View</h1>
+    
+
+    
 
 
 
@@ -68,39 +48,77 @@ Utilisé dans <a href="View.html">View</a>.</a></li></ul></div>
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>View<span class="signature">(template)</span><span class="type-signature"></span></h2>
+        <h2>
+        View
+        </h2>
         
     
 </header>
 
 <article>
-    <div class="container-overview">
     
+        <div class="container-overview">
         
-            <div class='vertical-section'>
-                <h3 class="title"><span>Constructor</span></h3>
-                <div class="members">
-                    <div class="member">
-
-
-    
-    <h4 class="name" id="View">
-        <a class="href-link" href="#View">#</a>
-        
-        <span class="code-name">
             
-                new View<span class="signature">(template)</span><span class="type-signature"></span>
-            
-        </span>
-    </h4>
+
+    
+
+    <h4 class="name" id="View"><span class="type-signature"></span>new View<span class="signature">(template)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="view.js.html">view.js</a>, <a href="view.js.html#line6">line 6</a>
+    </li></ul></dd>
     
 
     
+
     
-    <div class="description">
-        Initialise la vue en fonction du <a href="Template.html">Template</a>.
-    </div>
+
     
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    Initialise la vue en fonction du <a href="Template.html">Template</a>.
+</div>
+
+
 
 
 
@@ -133,28 +151,26 @@ Utilisé dans <a href="View.html">View</a>.</a></li></ul></div>
     <tbody>
     
 
-        
-<tr class="deep-level-0">
-  
-      <td class="name"><code>template</code></td>
-  
+        <tr>
+            
+                <td class="name"><code>template</code></td>
+            
 
-  <td class="type">
-  
-      
+            <td class="type">
+            
+                
 <span class="param-type">object</span>
 
 
-  
-  </td>
+            
+            </td>
 
-  
+            
 
-  
+            
 
-  <td class="description last">le template</td>
-</tr>
-
+            <td class="description last">le template</td>
+        </tr>
 
     
     </tbody>
@@ -164,10 +180,60 @@ Utilisé dans <a href="View.html">View</a>.</a></li></ul></div>
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </div>
+    
+
+    
+
+    
+
+    
+    
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id="._bindItemEditCancel"><span class="type-signature">(static) </span>_bindItemEditCancel<span class="signature">(handler)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
 <dl class="details">
 
     
-
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="view.js.html">view.js</a>, <a href="view.js.html#line250">line 250</a>
+    </li></ul></dd>
     
 
     
@@ -189,19 +255,15 @@ Utilisé dans <a href="View.html">View</a>.</a></li></ul></div>
     
 
     
-    
 
     
 
     
 
     
-        <p class="tag-source">
-            <a href="view.js.html" class="button">View Source</a>
-            <span>
-                <a href="view.js.html">view.js</a>, <a href="view.js.html#line6">line 6</a>
-            </span>
-        </p>
+
+    
+
     
 </dl>
 
@@ -209,74 +271,12 @@ Utilisé dans <a href="View.html">View</a>.</a></li></ul></div>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-                </div>
-            </div>
-        
-    
-    </div>
-    
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <div class='vertical-section'>
-            <h3 class="title"><span>Methods</span></h3>
-            <div class="members">
-            
-                <div class="member">
-
-
-    
-    <h4 class="name" id="._bindItemEditCancel">
-        <a class="href-link" href="#._bindItemEditCancel">#</a>
-        
-            
-                <span class='tag'>static</span>
-            
-        
-        <span class="code-name">
-            
-                _bindItemEditCancel<span class="signature">(handler)</span><span class="type-signature"></span>
-            
-        </span>
-    </h4>
-    
-
-    
-    
-    <div class="description">
-        EventListener pour l'annulation de la modification d'un élément. 
+<div class="description usertext">
+    EventListener pour l'annulation de la modification d'un élément. 
 Quitte le mode édition en appuyant sur la touche "escape"
-    </div>
-    
+</div>
+
+
 
 
 
@@ -309,28 +309,26 @@ Quitte le mode édition en appuyant sur la touche "escape"
     <tbody>
     
 
-        
-<tr class="deep-level-0">
-  
-      <td class="name"><code>handler</code></td>
-  
+        <tr>
+            
+                <td class="name"><code>handler</code></td>
+            
 
-  <td class="type">
-  
-      
+            <td class="type">
+            
+                
 <span class="param-type">function</span>
 
 
-  
-  </td>
+            
+            </td>
 
-  
+            
 
-  
+            
 
-  <td class="description last">Méthode attachée à l'éxecution de l'évènement (appelée sous condition).</td>
-</tr>
-
+            <td class="description last">Méthode attachée à l'éxecution de l'évènement (appelée sous condition).</td>
+        </tr>
 
     
     </tbody>
@@ -340,10 +338,39 @@ Quitte le mode édition en appuyant sur la touche "escape"
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="._bindItemEditDone"><span class="type-signature">(static) </span>_bindItemEditDone<span class="signature">(handler)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
 <dl class="details">
 
     
-
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="view.js.html">view.js</a>, <a href="view.js.html#line224">line 224</a>
+    </li></ul></dd>
     
 
     
@@ -365,19 +392,15 @@ Quitte le mode édition en appuyant sur la touche "escape"
     
 
     
-    
 
     
 
     
 
     
-        <p class="tag-source">
-            <a href="view.js.html" class="button">View Source</a>
-            <span>
-                <a href="view.js.html">view.js</a>, <a href="view.js.html#line250">line 250</a>
-            </span>
-        </p>
+
+    
+
     
 </dl>
 
@@ -385,50 +408,12 @@ Quitte le mode édition en appuyant sur la touche "escape"
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-            
-                <div class="member">
-
-
-    
-    <h4 class="name" id="._bindItemEditDone">
-        <a class="href-link" href="#._bindItemEditDone">#</a>
-        
-            
-                <span class='tag'>static</span>
-            
-        
-        <span class="code-name">
-            
-                _bindItemEditDone<span class="signature">(handler)</span><span class="type-signature"></span>
-            
-        </span>
-    </h4>
-    
-
-    
-    
-    <div class="description">
-        EventListener pour la validation de l'édition d'un élément. C'est à dire quitter le mode édition en appuyant sur "Entrer"
+<div class="description usertext">
+    EventListener pour la validation de l'édition d'un élément. C'est à dire quitter le mode édition en appuyant sur "Entrer"
 ou en cliquant en dehors du champs de saisie
-    </div>
-    
+</div>
+
+
 
 
 
@@ -461,28 +446,26 @@ ou en cliquant en dehors du champs de saisie
     <tbody>
     
 
-        
-<tr class="deep-level-0">
-  
-      <td class="name"><code>handler</code></td>
-  
+        <tr>
+            
+                <td class="name"><code>handler</code></td>
+            
 
-  <td class="type">
-  
-      
+            <td class="type">
+            
+                
 <span class="param-type">function</span>
 
 
-  
-  </td>
+            
+            </td>
 
-  
+            
 
-  
+            
 
-  <td class="description last">Méthode attachée à l'éxecution de l'évènement (appelée sous condition).</td>
-</tr>
-
+            <td class="description last">Méthode attachée à l'éxecution de l'évènement (appelée sous condition).</td>
+        </tr>
 
     
     </tbody>
@@ -492,10 +475,39 @@ ou en cliquant en dehors du champs de saisie
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="._clearCompletedButton"><span class="type-signature">(static) </span>_clearCompletedButton<span class="signature">(completedCount, visible)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
 <dl class="details">
 
     
-
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="view.js.html">view.js</a>, <a href="view.js.html#line41">line 41</a>
+    </li></ul></dd>
     
 
     
@@ -517,19 +529,15 @@ ou en cliquant en dehors du champs de saisie
     
 
     
-    
 
     
 
     
 
     
-        <p class="tag-source">
-            <a href="view.js.html" class="button">View Source</a>
-            <span>
-                <a href="view.js.html">view.js</a>, <a href="view.js.html#line224">line 224</a>
-            </span>
-        </p>
+
+    
+
     
 </dl>
 
@@ -537,49 +545,11 @@ ou en cliquant en dehors du champs de saisie
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<div class="description usertext">
+    Rend visible ou non le bouton "clear completed" en fonction de Template.prototype.clearCompletedButton
 </div>
-            
-                <div class="member">
 
 
-    
-    <h4 class="name" id="._clearCompletedButton">
-        <a class="href-link" href="#._clearCompletedButton">#</a>
-        
-            
-                <span class='tag'>static</span>
-            
-        
-        <span class="code-name">
-            
-                _clearCompletedButton<span class="signature">(completedCount, visible)</span><span class="type-signature"></span>
-            
-        </span>
-    </h4>
-    
-
-    
-    
-    <div class="description">
-        Rend visible ou non le bouton "clear completed" en fonction de Template.prototype.clearCompletedButton
-    </div>
-    
 
 
 
@@ -612,53 +582,49 @@ ou en cliquant en dehors du champs de saisie
     <tbody>
     
 
-        
-<tr class="deep-level-0">
-  
-      <td class="name"><code>completedCount</code></td>
-  
+        <tr>
+            
+                <td class="name"><code>completedCount</code></td>
+            
 
-  <td class="type">
-  
-      
+            <td class="type">
+            
+                
 <span class="param-type">number</span>
 
 
-  
-  </td>
+            
+            </td>
 
-  
+            
 
-  
+            
 
-  <td class="description last">Nombre de tâches complétées.</td>
-</tr>
-
+            <td class="description last">Nombre de tâches complétées.</td>
+        </tr>
 
     
 
-        
-<tr class="deep-level-0">
-  
-      <td class="name"><code>visible</code></td>
-  
+        <tr>
+            
+                <td class="name"><code>visible</code></td>
+            
 
-  <td class="type">
-  
-      
+            <td class="type">
+            
+                
 <span class="param-type">boolean</span>
 
 
-  
-  </td>
+            
+            </td>
 
-  
+            
 
-  
+            
 
-  <td class="description last">True si visible, false si non. Détermine la visibilité du bouton.</td>
-</tr>
-
+            <td class="description last">True si visible, false si non. Détermine la visibilité du bouton.</td>
+        </tr>
 
     
     </tbody>
@@ -668,10 +634,39 @@ ou en cliquant en dehors du champs de saisie
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="._editItem"><span class="type-signature">(static) </span>_editItem<span class="signature">(id, title)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
 <dl class="details">
 
     
-
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="view.js.html">view.js</a>, <a href="view.js.html#line84">line 84</a>
+    </li></ul></dd>
     
 
     
@@ -693,19 +688,15 @@ ou en cliquant en dehors du champs de saisie
     
 
     
-    
 
     
 
     
 
     
-        <p class="tag-source">
-            <a href="view.js.html" class="button">View Source</a>
-            <span>
-                <a href="view.js.html">view.js</a>, <a href="view.js.html#line41">line 41</a>
-            </span>
-        </p>
+
+    
+
     
 </dl>
 
@@ -713,49 +704,11 @@ ou en cliquant en dehors du champs de saisie
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<div class="description usertext">
+    Affiche le mode édition d'un élément.
 </div>
-            
-                <div class="member">
 
 
-    
-    <h4 class="name" id="._editItem">
-        <a class="href-link" href="#._editItem">#</a>
-        
-            
-                <span class='tag'>static</span>
-            
-        
-        <span class="code-name">
-            
-                _editItem<span class="signature">(id, title)</span><span class="type-signature"></span>
-            
-        </span>
-    </h4>
-    
-
-    
-    
-    <div class="description">
-        Affiche le mode édition d'un élément.
-    </div>
-    
 
 
 
@@ -788,53 +741,49 @@ ou en cliquant en dehors du champs de saisie
     <tbody>
     
 
-        
-<tr class="deep-level-0">
-  
-      <td class="name"><code>id</code></td>
-  
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
 
-  <td class="type">
-  
-      
+            <td class="type">
+            
+                
 <span class="param-type">number</span>
 
 
-  
-  </td>
+            
+            </td>
 
-  
+            
 
-  
+            
 
-  <td class="description last">L'ID de l'élément à éditer.</td>
-</tr>
-
+            <td class="description last">L'ID de l'élément à éditer.</td>
+        </tr>
 
     
 
-        
-<tr class="deep-level-0">
-  
-      <td class="name"><code>title</code></td>
-  
+        <tr>
+            
+                <td class="name"><code>title</code></td>
+            
 
-  <td class="type">
-  
-      
+            <td class="type">
+            
+                
 <span class="param-type">string</span>
 
 
-  
-  </td>
+            
+            </td>
 
-  
+            
 
-  
+            
 
-  <td class="description last">Le titre de la Todo.</td>
-</tr>
-
+            <td class="description last">Le titre de la Todo.</td>
+        </tr>
 
     
     </tbody>
@@ -844,10 +793,39 @@ ou en cliquant en dehors du champs de saisie
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="._editItemDone"><span class="type-signature">(static) </span>_editItemDone<span class="signature">(id, title)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
 <dl class="details">
 
     
-
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="view.js.html">view.js</a>, <a href="view.js.html#line108">line 108</a>
+    </li></ul></dd>
     
 
     
@@ -869,19 +847,15 @@ ou en cliquant en dehors du champs de saisie
     
 
     
-    
 
     
 
     
 
     
-        <p class="tag-source">
-            <a href="view.js.html" class="button">View Source</a>
-            <span>
-                <a href="view.js.html">view.js</a>, <a href="view.js.html#line84">line 84</a>
-            </span>
-        </p>
+
+    
+
     
 </dl>
 
@@ -889,49 +863,11 @@ ou en cliquant en dehors du champs de saisie
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<div class="description usertext">
+    Termine l'action d'éditer et affiche le nouveau titre de la todo.
 </div>
-            
-                <div class="member">
 
 
-    
-    <h4 class="name" id="._editItemDone">
-        <a class="href-link" href="#._editItemDone">#</a>
-        
-            
-                <span class='tag'>static</span>
-            
-        
-        <span class="code-name">
-            
-                _editItemDone<span class="signature">(id, title)</span><span class="type-signature"></span>
-            
-        </span>
-    </h4>
-    
-
-    
-    
-    <div class="description">
-        Termine l'action d'éditer et affiche le nouveau titre de la todo.
-    </div>
-    
 
 
 
@@ -964,53 +900,49 @@ ou en cliquant en dehors du champs de saisie
     <tbody>
     
 
-        
-<tr class="deep-level-0">
-  
-      <td class="name"><code>id</code></td>
-  
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
 
-  <td class="type">
-  
-      
+            <td class="type">
+            
+                
 <span class="param-type">number</span>
 
 
-  
-  </td>
+            
+            </td>
 
-  
+            
 
-  
+            
 
-  <td class="description last">L'ID de l'élément modifié.</td>
-</tr>
-
+            <td class="description last">L'ID de l'élément modifié.</td>
+        </tr>
 
     
 
-        
-<tr class="deep-level-0">
-  
-      <td class="name"><code>title</code></td>
-  
+        <tr>
+            
+                <td class="name"><code>title</code></td>
+            
 
-  <td class="type">
-  
-      
+            <td class="type">
+            
+                
 <span class="param-type">string</span>
 
 
-  
-  </td>
+            
+            </td>
 
-  
+            
 
-  
+            
 
-  <td class="description last">Le nouveau titre de la Todo.</td>
-</tr>
-
+            <td class="description last">Le nouveau titre de la Todo.</td>
+        </tr>
 
     
     </tbody>
@@ -1020,10 +952,39 @@ ou en cliquant en dehors du champs de saisie
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="._elementComplete"><span class="type-signature">(static) </span>_elementComplete<span class="signature">(id, completed)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
 <dl class="details">
 
     
-
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="view.js.html">view.js</a>, <a href="view.js.html#line64">line 64</a>
+    </li></ul></dd>
     
 
     
@@ -1045,19 +1006,15 @@ ou en cliquant en dehors du champs de saisie
     
 
     
-    
 
     
 
     
 
     
-        <p class="tag-source">
-            <a href="view.js.html" class="button">View Source</a>
-            <span>
-                <a href="view.js.html">view.js</a>, <a href="view.js.html#line108">line 108</a>
-            </span>
-        </p>
+
+    
+
     
 </dl>
 
@@ -1065,49 +1022,11 @@ ou en cliquant en dehors du champs de saisie
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<div class="description usertext">
+    Gère l'affichage des tâches marquées comme complétées en testant si l'élément est terminé.
 </div>
-            
-                <div class="member">
 
 
-    
-    <h4 class="name" id="._elementComplete">
-        <a class="href-link" href="#._elementComplete">#</a>
-        
-            
-                <span class='tag'>static</span>
-            
-        
-        <span class="code-name">
-            
-                _elementComplete<span class="signature">(id, completed)</span><span class="type-signature"></span>
-            
-        </span>
-    </h4>
-    
-
-    
-    
-    <div class="description">
-        Gère l'affichage des tâches marquées comme complétées en testant si l'élément est terminé.
-    </div>
-    
 
 
 
@@ -1140,53 +1059,49 @@ ou en cliquant en dehors du champs de saisie
     <tbody>
     
 
-        
-<tr class="deep-level-0">
-  
-      <td class="name"><code>id</code></td>
-  
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
 
-  <td class="type">
-  
-      
+            <td class="type">
+            
+                
 <span class="param-type">number</span>
 
 
-  
-  </td>
+            
+            </td>
 
-  
+            
 
-  
+            
 
-  <td class="description last">L'ID de l'élément à tester.</td>
-</tr>
-
+            <td class="description last">L'ID de l'élément à tester.</td>
+        </tr>
 
     
 
-        
-<tr class="deep-level-0">
-  
-      <td class="name"><code>completed</code></td>
-  
+        <tr>
+            
+                <td class="name"><code>completed</code></td>
+            
 
-  <td class="type">
-  
-      
+            <td class="type">
+            
+                
 <span class="param-type">bolean</span>
 
 
-  
-  </td>
+            
+            </td>
 
-  
+            
 
-  
+            
 
-  <td class="description last">détermine le statut de l'élément.</td>
-</tr>
-
+            <td class="description last">détermine le statut de l'élément.</td>
+        </tr>
 
     
     </tbody>
@@ -1196,10 +1111,39 @@ ou en cliquant en dehors du champs de saisie
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="._itemId"><span class="type-signature">(static) </span>_itemId<span class="signature">(element)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
 <dl class="details">
 
     
-
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="view.js.html">view.js</a>, <a href="view.js.html#line213">line 213</a>
+    </li></ul></dd>
     
 
     
@@ -1221,19 +1165,15 @@ ou en cliquant en dehors du champs de saisie
     
 
     
-    
 
     
 
     
 
     
-        <p class="tag-source">
-            <a href="view.js.html" class="button">View Source</a>
-            <span>
-                <a href="view.js.html">view.js</a>, <a href="view.js.html#line64">line 64</a>
-            </span>
-        </p>
+
+    
+
     
 </dl>
 
@@ -1241,49 +1181,11 @@ ou en cliquant en dehors du champs de saisie
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<div class="description usertext">
+    Retourne l'ID d'une Todo
 </div>
-            
-                <div class="member">
 
 
-    
-    <h4 class="name" id="._itemId">
-        <a class="href-link" href="#._itemId">#</a>
-        
-            
-                <span class='tag'>static</span>
-            
-        
-        <span class="code-name">
-            
-                _itemId<span class="signature">(element)</span><span class="type-signature"></span>
-            
-        </span>
-    </h4>
-    
-
-    
-    
-    <div class="description">
-        Retourne l'ID d'une Todo
-    </div>
-    
 
 
 
@@ -1316,28 +1218,26 @@ ou en cliquant en dehors du champs de saisie
     <tbody>
     
 
-        
-<tr class="deep-level-0">
-  
-      <td class="name"><code>element</code></td>
-  
+        <tr>
+            
+                <td class="name"><code>element</code></td>
+            
 
-  <td class="type">
-  
-      
+            <td class="type">
+            
+                
 <span class="param-type">object</span>
 
 
-  
-  </td>
+            
+            </td>
 
-  
+            
 
-  
+            
 
-  <td class="description last">Element cible</td>
-</tr>
-
+            <td class="description last">Element cible</td>
+        </tr>
 
     
     </tbody>
@@ -1347,10 +1247,39 @@ ou en cliquant en dehors du champs de saisie
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="._removeItem"><span class="type-signature">(static) </span>_removeItem<span class="signature">(id)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
 <dl class="details">
 
     
-
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="view.js.html">view.js</a>, <a href="view.js.html#line27">line 27</a>
+    </li></ul></dd>
     
 
     
@@ -1372,19 +1301,15 @@ ou en cliquant en dehors du champs de saisie
     
 
     
-    
 
     
 
     
 
     
-        <p class="tag-source">
-            <a href="view.js.html" class="button">View Source</a>
-            <span>
-                <a href="view.js.html">view.js</a>, <a href="view.js.html#line213">line 213</a>
-            </span>
-        </p>
+
+    
+
     
 </dl>
 
@@ -1392,49 +1317,11 @@ ou en cliquant en dehors du champs de saisie
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<div class="description usertext">
+    Supprime la Todo de la vue en fonction de l’id passé en paramètre.
 </div>
-            
-                <div class="member">
 
 
-    
-    <h4 class="name" id="._removeItem">
-        <a class="href-link" href="#._removeItem">#</a>
-        
-            
-                <span class='tag'>static</span>
-            
-        
-        <span class="code-name">
-            
-                _removeItem<span class="signature">(id)</span><span class="type-signature"></span>
-            
-        </span>
-    </h4>
-    
-
-    
-    
-    <div class="description">
-        Supprime la Todo de la vue en fonction de l’id passé en paramètre.
-    </div>
-    
 
 
 
@@ -1467,28 +1354,26 @@ ou en cliquant en dehors du champs de saisie
     <tbody>
     
 
-        
-<tr class="deep-level-0">
-  
-      <td class="name"><code>id</code></td>
-  
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
 
-  <td class="type">
-  
-      
+            <td class="type">
+            
+                
 <span class="param-type">number</span>
 
 
-  
-  </td>
+            
+            </td>
 
-  
+            
 
-  
+            
 
-  <td class="description last">L'ID de l'élément à supprimer.</td>
-</tr>
-
+            <td class="description last">L'ID de l'élément à supprimer.</td>
+        </tr>
 
     
     </tbody>
@@ -1498,10 +1383,39 @@ ou en cliquant en dehors du champs de saisie
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="._setFilter"><span class="type-signature">(static) </span>_setFilter<span class="signature">(currentPage)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
 <dl class="details">
 
     
-
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="view.js.html">view.js</a>, <a href="view.js.html#line53">line 53</a>
+    </li></ul></dd>
     
 
     
@@ -1523,19 +1437,15 @@ ou en cliquant en dehors du champs de saisie
     
 
     
-    
 
     
 
     
 
     
-        <p class="tag-source">
-            <a href="view.js.html" class="button">View Source</a>
-            <span>
-                <a href="view.js.html">view.js</a>, <a href="view.js.html#line27">line 27</a>
-            </span>
-        </p>
+
+    
+
     
 </dl>
 
@@ -1543,49 +1453,11 @@ ou en cliquant en dehors du champs de saisie
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<div class="description usertext">
+    Met en valeur le bouton de filtre de la page actuelle (nom de la page passée en paramètre).
 </div>
-            
-                <div class="member">
 
 
-    
-    <h4 class="name" id="._setFilter">
-        <a class="href-link" href="#._setFilter">#</a>
-        
-            
-                <span class='tag'>static</span>
-            
-        
-        <span class="code-name">
-            
-                _setFilter<span class="signature">(currentPage)</span><span class="type-signature"></span>
-            
-        </span>
-    </h4>
-    
-
-    
-    
-    <div class="description">
-        Met en valeur le bouton de filtre de la page actuelle (nom de la page passée en paramètre).
-    </div>
-    
 
 
 
@@ -1618,28 +1490,26 @@ ou en cliquant en dehors du champs de saisie
     <tbody>
     
 
-        
-<tr class="deep-level-0">
-  
-      <td class="name"><code>currentPage</code></td>
-  
+        <tr>
+            
+                <td class="name"><code>currentPage</code></td>
+            
 
-  <td class="type">
-  
-      
+            <td class="type">
+            
+                
 <span class="param-type">string</span>
 
 
-  
-  </td>
+            
+            </td>
 
-  
+            
 
-  
+            
 
-  <td class="description last">Page actuelle ayant comme valeur vide '', ou Active, ou Completed. Routage de la page.</td>
-</tr>
-
+            <td class="description last">Page actuelle ayant comme valeur vide '', ou Active, ou Completed. Routage de la page.</td>
+        </tr>
 
     
     </tbody>
@@ -1649,10 +1519,39 @@ ou en cliquant en dehors du champs de saisie
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".bind"><span class="type-signature">(static) </span>bind<span class="signature">(event, handler)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
 <dl class="details">
 
     
-
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="view.js.html">view.js</a>, <a href="view.js.html#line269">line 269</a>
+    </li></ul></dd>
     
 
     
@@ -1674,19 +1573,15 @@ ou en cliquant en dehors du champs de saisie
     
 
     
-    
 
     
 
     
 
     
-        <p class="tag-source">
-            <a href="view.js.html" class="button">View Source</a>
-            <span>
-                <a href="view.js.html">view.js</a>, <a href="view.js.html#line53">line 53</a>
-            </span>
-        </p>
+
+    
+
     
 </dl>
 
@@ -1694,50 +1589,12 @@ ou en cliquant en dehors du champs de saisie
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-            
-                <div class="member">
-
-
-    
-    <h4 class="name" id=".bind">
-        <a class="href-link" href="#.bind">#</a>
-        
-            
-                <span class='tag'>static</span>
-            
-        
-        <span class="code-name">
-            
-                bind<span class="signature">(event, handler)</span><span class="type-signature"></span>
-            
-        </span>
-    </h4>
-    
-
-    
-    
-    <div class="description">
-        Associe une liste d'évènements à une méthode passée en paramètre.
+<div class="description usertext">
+    Associe une liste d'évènements à une méthode passée en paramètre.
 Fait le lien entre les méthodes du <a href="Controller.html">Controller</a> et les éléments de <a href="View.html">View</a>.
-    </div>
-    
+</div>
+
+
 
 
 
@@ -1770,53 +1627,49 @@ Fait le lien entre les méthodes du <a href="Controller.html">Controller</a> et 
     <tbody>
     
 
-        
-<tr class="deep-level-0">
-  
-      <td class="name"><code>event</code></td>
-  
+        <tr>
+            
+                <td class="name"><code>event</code></td>
+            
 
-  <td class="type">
-  
-      
+            <td class="type">
+            
+                
 <span class="param-type">function</span>
 
 
-  
-  </td>
+            
+            </td>
 
-  
+            
 
-  
+            
 
-  <td class="description last">L'évenement actif.</td>
-</tr>
-
+            <td class="description last">L'évenement actif.</td>
+        </tr>
 
     
 
-        
-<tr class="deep-level-0">
-  
-      <td class="name"><code>handler</code></td>
-  
+        <tr>
+            
+                <td class="name"><code>handler</code></td>
+            
 
-  <td class="type">
-  
-      
+            <td class="type">
+            
+                
 <span class="param-type">function</span>
 
 
-  
-  </td>
+            
+            </td>
 
-  
+            
 
-  
+            
 
-  <td class="description last">Méthode attachée à l'éxecution de l'évènement (appelée sous condition).</td>
-</tr>
-
+            <td class="description last">Méthode attachée à l'éxecution de l'évènement (appelée sous condition).</td>
+        </tr>
 
     
     </tbody>
@@ -1826,10 +1679,39 @@ Fait le lien entre les méthodes du <a href="Controller.html">Controller</a> et 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".render"><span class="type-signature">(static) </span>render<span class="signature">(viewCmd, parameter)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
 <dl class="details">
 
     
-
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="view.js.html">view.js</a>, <a href="view.js.html#line132">line 132</a>
+    </li></ul></dd>
     
 
     
@@ -1851,19 +1733,15 @@ Fait le lien entre les méthodes du <a href="Controller.html">Controller</a> et 
     
 
     
-    
 
     
 
     
 
     
-        <p class="tag-source">
-            <a href="view.js.html" class="button">View Source</a>
-            <span>
-                <a href="view.js.html">view.js</a>, <a href="view.js.html#line269">line 269</a>
-            </span>
-        </p>
+
+    
+
     
 </dl>
 
@@ -1871,49 +1749,11 @@ Fait le lien entre les méthodes du <a href="Controller.html">Controller</a> et 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<div class="description usertext">
+    Exécute la commande passée en paramètre (controller.js) et appelle la méthode de View.js correspondante. Met à jour le DOM.
 </div>
-            
-                <div class="member">
 
 
-    
-    <h4 class="name" id=".render">
-        <a class="href-link" href="#.render">#</a>
-        
-            
-                <span class='tag'>static</span>
-            
-        
-        <span class="code-name">
-            
-                render<span class="signature">(viewCmd, parameter)</span><span class="type-signature"></span>
-            
-        </span>
-    </h4>
-    
-
-    
-    
-    <div class="description">
-        Exécute la commande passée en paramètre (controller.js) et appelle la méthode de View.js correspondante. Met à jour le DOM.
-    </div>
-    
 
 
 
@@ -1946,53 +1786,49 @@ Fait le lien entre les méthodes du <a href="Controller.html">Controller</a> et 
     <tbody>
     
 
-        
-<tr class="deep-level-0">
-  
-      <td class="name"><code>viewCmd</code></td>
-  
+        <tr>
+            
+                <td class="name"><code>viewCmd</code></td>
+            
 
-  <td class="type">
-  
-      
+            <td class="type">
+            
+                
 <span class="param-type">string</span>
 
 
-  
-  </td>
+            
+            </td>
 
-  
+            
 
-  
+            
 
-  <td class="description last">La fonction active.</td>
-</tr>
-
+            <td class="description last">La fonction active.</td>
+        </tr>
 
     
 
-        
-<tr class="deep-level-0">
-  
-      <td class="name"><code>parameter</code></td>
-  
+        <tr>
+            
+                <td class="name"><code>parameter</code></td>
+            
 
-  <td class="type">
-  
-      
+            <td class="type">
+            
+                
 <span class="param-type">object</span>
 
 
-  
-  </td>
+            
+            </td>
 
-  
+            
 
-  
+            
 
-  <td class="description last">Les paramètres de la fonction active.</td>
-</tr>
-
+            <td class="description last">Les paramètres de la fonction active.</td>
+        </tr>
 
     
     </tbody>
@@ -2002,46 +1838,6 @@ Fait le lien entre les méthodes du <a href="Controller.html">Controller</a> et 
 
 
 
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-        <p class="tag-source">
-            <a href="view.js.html" class="button">View Source</a>
-            <span>
-                <a href="view.js.html">view.js</a>, <a href="view.js.html#line132">line 132</a>
-            </span>
-        </p>
-    
-</dl>
 
 
 
@@ -2056,17 +1852,7 @@ Fait le lien entre les méthodes du <a href="Controller.html">Controller</a> et 
 
 
 
-
-
-
-
-
-
-
-</div>
-            
-            </div>
-        </div>
+        
     
 
     
@@ -2079,24 +1865,21 @@ Fait le lien entre les méthodes du <a href="Controller.html">Controller</a> et 
 
 
 
-                </div>
-            </div>
-        </div>
-    </div>
+    
+    
+</div>
 
+<br class="clear">
 
-<footer class="footer">
-    <div class="content has-text-centered">
-        <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Wed Feb 05 2020 17:37:29 GMT+0100 (GMT+01:00)</p>
-        <p class="sidebar-created-by">
-            <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
-            <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
-        </p>
-    </div>
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Fri Feb 07 2020 14:38:10 GMT+0100 (GMT+01:00) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
 
-<script src="scripts/app.min.js"></script>
-<script src="scripts/linenumber.js"> </script>
+
+
 </body>
 </html>

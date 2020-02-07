@@ -1,67 +1,45 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     
     <meta charset="utf-8">
-    <title>JSDoc: store.js</title>
-
-    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script src="./build/entry.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>store.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <link href="https://fonts.googleapis.com/css?family=Muli:100,400,700|Oswald:300|Inconsolata,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
-    <link type="text/css" rel="stylesheet" href="styles/app.min.css">
-    <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-
 <body>
-    <div id="stickyNavbarOverlay"></div>
-    <div class="top-navbar">
-        <div class="container">
-            <nav class="navbar" role="navigation" aria-label="main navigation">
-                <div class="navbar-brand">
-                    
-                    
-                        <h1 class="navbar-item">Documentation</h1>
-                    
-                    <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                    </a>
-                </div>
-                
-            </nav>
-        </div>
-    </div>
-    <div class="container">
-        <div class="columns">
-            <div class="column is-3" id="sidebarNav">
-                <div class="sidebar">
-                    <nav>
-                        <h2><a href="index.html">Home</a></h2><div class="category"><h3>Classes</h3><ul><li><a href="Controller.html">Controller</a></li><li><a href="Model.html">Model</a></li><li><a href="Store.html">Store</a></li><li><a href="Template.html">Template</a></li><li><a href="Todo.html">Todo</a></li><li><a href="View.html">View</a></li></ul><h3>Global</h3><ul><li><a href="global.html#setView">setView</a></li><li><a href="global.html#window.$delegateUtilis%25C3%25A9dans%257B@linkView%257D.">window.$delegate
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Controller.html">Controller</a><ul class='methods'><li data-type='method'><a href="Controller.html#._filter">_filter</a></li><li data-type='method'><a href="Controller.html#._updateCount">_updateCount</a></li><li data-type='method'><a href="Controller.html#._updateFilterState">_updateFilterState</a></li><li data-type='method'><a href="Controller.html#.addItem">addItem</a></li><li data-type='method'><a href="Controller.html#.editItem">editItem</a></li><li data-type='method'><a href="Controller.html#.editItemCancel">editItemCancel</a></li><li data-type='method'><a href="Controller.html#.editItemSave">editItemSave</a></li><li data-type='method'><a href="Controller.html#.removeCompletedItems">removeCompletedItems</a></li><li data-type='method'><a href="Controller.html#.removeItem">removeItem</a></li><li data-type='method'><a href="Controller.html#.setView">setView</a></li><li data-type='method'><a href="Controller.html#.showActive">showActive</a></li><li data-type='method'><a href="Controller.html#.showAll">showAll</a></li><li data-type='method'><a href="Controller.html#.showCompleted">showCompleted</a></li><li data-type='method'><a href="Controller.html#.toggleAll">toggleAll</a></li><li data-type='method'><a href="Controller.html#.toggleComplete">toggleComplete</a></li></ul></li><li><a href="Model.html">Model</a><ul class='methods'><li data-type='method'><a href="Model.html#.create">create</a></li><li data-type='method'><a href="Model.html#.getCount">getCount</a></li><li data-type='method'><a href="Model.html#.read">read</a></li><li data-type='method'><a href="Model.html#.remove">remove</a></li><li data-type='method'><a href="Model.html#.removeAll">removeAll</a></li><li data-type='method'><a href="Model.html#.update">update</a></li></ul></li><li><a href="Store.html">Store</a><ul class='methods'><li data-type='method'><a href="Store.html#.drop">drop</a></li><li data-type='method'><a href="Store.html#.find">find</a></li><li data-type='method'><a href="Store.html#.findAll">findAll</a></li><li data-type='method'><a href="Store.html#.remove">remove</a></li><li data-type='method'><a href="Store.html#.save">save</a></li></ul></li><li><a href="Template.html">Template</a><ul class='methods'><li data-type='method'><a href="Template.html#.clearCompletedButton">clearCompletedButton</a></li><li data-type='method'><a href="Template.html#.itemCounter">itemCounter</a></li><li data-type='method'><a href="Template.html#.show">show</a></li></ul></li><li><a href="Todo.html">Todo</a></li><li><a href="View.html">View</a><ul class='methods'><li data-type='method'><a href="View.html#._bindItemEditCancel">_bindItemEditCancel</a></li><li data-type='method'><a href="View.html#._bindItemEditDone">_bindItemEditDone</a></li><li data-type='method'><a href="View.html#._clearCompletedButton">_clearCompletedButton</a></li><li data-type='method'><a href="View.html#._editItem">_editItem</a></li><li data-type='method'><a href="View.html#._editItemDone">_editItemDone</a></li><li data-type='method'><a href="View.html#._elementComplete">_elementComplete</a></li><li data-type='method'><a href="View.html#._itemId">_itemId</a></li><li data-type='method'><a href="View.html#._removeItem">_removeItem</a></li><li data-type='method'><a href="View.html#._setFilter">_setFilter</a></li><li data-type='method'><a href="View.html#.bind">bind</a></li><li data-type='method'><a href="View.html#.render">render</a></li></ul></li></ul><h3>Global</h3><ul><li><a href="global.html#setView">setView</a></li><li><a href="global.html#window.$delegateUtilis%25C3%25A9dans%257B@linkView%257D.">window.$delegate
 Utilisé dans {@link View}.</a></li><li><a href="global.html#window.$onUtilis%25C3%25A9dans%257B@linkView%257Det%257B@linkTodo%257D.">window.$on
 Utilisé dans {@link View} et {@link Todo}.</a></li><li><a href="global.html#window.qsUtilis%25C3%25A9dans%257B@linkView%257D.">window.qs
 Utilisé dans {@link View}.</a></li><li><a href="global.html#window.qsaUtilis%25C3%25A9dans%257B@linkView%257D.">window.qsa
-Utilisé dans {@link View}.</a></li></ul></div>
-                    </nav>
-                </div>
-            </div>
-            <div class="column is-9-desktop">
-                <div class="content" id="main-content-wrapper">
-                    <header class="page-title">
-                        <p>Source</p>
-                        <h1>store.js</h1>
-                    </header>
-                    
-                    
+Utilisé dans {@link View}.</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">store.js</h1>
+    
+
+    
 
 
 
@@ -228,24 +206,21 @@ Utilisé dans {@link View}.</a></li></ul></div>
 
 
 
-                </div>
-            </div>
-        </div>
-    </div>
+    
+    
+</div>
 
+<br class="clear">
 
-<footer class="footer">
-    <div class="content has-text-centered">
-        <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Wed Feb 05 2020 17:37:29 GMT+0100 (GMT+01:00)</p>
-        <p class="sidebar-created-by">
-            <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
-            <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
-        </p>
-    </div>
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Fri Feb 07 2020 14:38:10 GMT+0100 (GMT+01:00) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
 
-<script src="scripts/app.min.js"></script>
-<script src="scripts/linenumber.js"> </script>
+
+
 </body>
 </html>
