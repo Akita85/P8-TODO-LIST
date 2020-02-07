@@ -243,6 +243,7 @@
 	 * Met à jour les parties de la page qui changent en fonction du nombre restant de todos.
 	 * @method
 	 * @name Controller._updateCount
+	 * @param {string} activeRoute - le routing de la page sur laquelle se trouve l'utilisateur : #/'' || #/active || #/completed .
 	 */
 	Controller.prototype._updateCount = function (activeRoute) {
 		var self = this;

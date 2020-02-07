@@ -41,11 +41,11 @@
 	}
 
 	/**
-	 * Créé une chaîne de caractère comprenant des éléments HTML <li> et la retourne pour la placer dans l'application.
+	 * Créé une chaîne de caractère comprenant des éléments HTML représentant un élément dans une liste et la retourne pour la placer dans l'application.
 	 * @method
 	 * @name Template.show
 	 * @param {object} data - L'objet contenant les clés que nous souhaitons trouver dans le template à remplacer.
-	 * @returns {string} Template HTML correspondant à l'élément <li>
+	 * @returns {string} Template HTML correspondant à l'élément représentant un élément dans une liste
 	 *
 	 * @example
 	 * view.show({
