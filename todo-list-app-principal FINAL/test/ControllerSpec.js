@@ -169,6 +169,35 @@ describe('controller', function () {
 		});
 	});
 
+	it('Should not show the "clear completed" button when switching to active view', function () {
+		//ADD TEST
+		var todo = {id: 42, title: 'my todo', completed: true};
+		setUpModel([todo]);
+
+		// Simulation du passage sur la page active suite action utilisateur
+		subject.setView('#/active');
+		// Vérifie que le bouton clearCompleted est bien en "visible: false" et donc ne s'affiche pas. 
+		expect(view.render).toHaveBeenCalledWith('clearCompletedButton', {
+			completed: 1,
+			visible: false
+		});
+	});
+
+	it('Should show "clear completed" button when switching to completed view', function () {
+		//ADD TEST
+		var todo = {id: 42, title: 'my todo', completed: true};
+		setUpModel([todo]);
+
+		// Simulation du passage sur la page completed suite action utilisateur
+		subject.setView('#/completed');
+
+		// Vérifie que le bouton clearCompleted est bien en "visible: true" et donc qu'il s'affiche bien. 
+		expect(view.render).toHaveBeenCalledWith('clearCompletedButton', {
+			completed: 1,
+			visible: true
+		});
+	});
+
 	it('should highlight "All" filter by default', function () {
 		// TODO: write test
 		setUpModel([]);
