@@ -216,7 +216,7 @@ describe('controller', function () {
 		expect(view.render).toHaveBeenCalledWith('setFilter', 'active');
 	});
 
-	it('should highlight "Completed" filter when switching to active view', function () {
+	it('should highlight "Completed" filter when switching to completed view', function () {
 		// ADD TEST
 		setUpModel([]);
 
