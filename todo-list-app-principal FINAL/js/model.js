@@ -114,7 +114,6 @@
 				} else {
 					todos.active++;
 				}
-
 				todos.total++;
 			});
 			callback(todos);
