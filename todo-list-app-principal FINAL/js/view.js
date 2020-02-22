@@ -59,6 +59,7 @@
 	View.prototype._setFilter = function (currentPage) {
 		qs('.filters .selected').className = '';
 		qs('.filters [href="#/' + currentPage + '"]').className = 'selected';
+		this.$newTodo.focus();
 	};
 
 	/**
